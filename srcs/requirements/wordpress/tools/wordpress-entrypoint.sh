@@ -27,6 +27,11 @@ if [ ! -f wp-config.php ]; then
         --admin_password=$WORDPRESS_ADMIN_PASSWORD \
         --admin_email=$WORDPRESS_ADMIN_EMAIL \
         --allow-root
+    # Add editor user
+    wp user create $WORDPRESS_EDITOR_USER \
+	    $WORDPRESS_EDITOR_EMAIL \
+	    --role=editor \
+	    --user_pass=$WORDPRESS_EDITOR_PASSWORD
 fi
 
 exec "$@"
