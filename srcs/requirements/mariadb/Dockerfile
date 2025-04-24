@@ -8,5 +8,4 @@ COPY tools/my.cnf /etc/my.cnf.d/mariadb-server.cnf
 COPY tools/mariadb-entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/mariadb-entrypoint.sh
 EXPOSE 3306
-#CMD ["bash"]
 ENTRYPOINT ["mariadb-entrypoint.sh"]
