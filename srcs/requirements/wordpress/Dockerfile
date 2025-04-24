@@ -6,7 +6,7 @@ RUN mkdir -p /var/www/html && \
 	wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar && \
 	mv wp-cli.phar /usr/local/bin/wp
-COPY tools/www.conf /etc/php84/php-fpm.d/www.conf
+COPY tools/www.conf /etc/php83/php-fpm.d/www.conf
 COPY tools/wordpress-entrypoint.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/wordpress-entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/wordpress-entrypoint.sh"]
